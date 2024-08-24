@@ -1,6 +1,8 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { AuthContextProvider } from './Context/AuthContext'
+
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={rubik.className}>
         <Navbar />
+        <AuthContextProvider>
         {children}
+        </AuthContextProvider>
         </body>
     </html>
   );
