@@ -8,7 +8,7 @@ export default function loginForm () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { login, error, isLoading } = useLogin()
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault()
     await login(email, password)
@@ -18,7 +18,7 @@ export default function loginForm () {
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0 }} exit={{ opacity: 0, y: 20 }}>
-      <form className='Login h-72 w-96 py-3 px-6' 
+      <form className='login h-72 w-96 py-3 px-6' 
       onSubmit={handleSubmit}
       >
         <h3 className="pb-5 text-4xl">Log in</h3>

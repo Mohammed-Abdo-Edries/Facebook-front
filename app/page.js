@@ -1,8 +1,18 @@
+"use client"
+import SideBar from "./components/sideBar";
+import Feed from "./components/feed";
+import Navbar from "./components/navbar";
+import Rightbar from "./components/rightBar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello World
+    <div>
+        <Navbar />
+    <main className="flex min-h-full flex-row justify-between">
+        <SideBar className=""/>
+        <Feed className=""/>
+        <Rightbar className=""/>
     </main>
+    </div>
   );
 }
