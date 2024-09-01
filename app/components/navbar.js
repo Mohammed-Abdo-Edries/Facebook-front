@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import {FaSearch} from "react-icons/fa"
-import {IoChatbubbleEllipsesSharp} from "react-icons/io5"
+// import {IoChatbubbleEllipsesSharp} from "react-icons/io5"
 import {IoMdNotifications} from "react-icons/io"
 import {FaUser} from "react-icons/fa"
 // import { useContext } from "react";
@@ -13,7 +13,7 @@ export default function Navbar () {
   // const { user } = useAuthContext();
 
   return (
-    <div className="navbar justify-between flex rounded-b-md h-12 w-full bg-blue-500 sticky top-0 max-w-full px-4 py-2 sm:px-14 text-lg">
+    <div className="navbar z-10 justify-between flex rounded-b-md h-12 w-full bg-blue-500 sticky top-0 max-w-full px-2 py-2 sm:px-12 text-lg">
         <div className="pr-2">
         <Link className="pr-2 text-white cursor-pointer" href="/">
           <span>Facebook</span>
@@ -32,7 +32,7 @@ export default function Navbar () {
         </div>
       <div className="right flex relative">
         {/* <Link href="/">Homepage</Link> */}
-        <IoChatbubbleEllipsesSharp className="absolute top-2 right-8"/>
+        {/* <IoChatbubbleEllipsesSharp className="absolute top-2 right-8"/> */}
         <IoMdNotifications className="absolute top-2 right-2"/>
         <FaUser className="absolute top-2"/>
         {/* <PersonOutlinedIcon /> */}

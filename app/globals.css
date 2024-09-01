@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.post {
+    box-shadow: 10px 25px 70px rgba(92, 99, 105, 0.2);
+    border: 1px solid #dadce0;
+}
 .signup {
     box-shadow: 10px 25px 70px rgba(92, 99, 105, 0.2);
 }

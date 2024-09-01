@@ -10,53 +10,67 @@ import {RiGraduationCapFill} from "react-icons/ri"
 
 export default function sideBar() {
   return (
-    <div className="h-screen p-4">
-      <ul>
-      <li className="mb-4 flex">
-        <IoChatbubbleEllipsesSharp />
+    <div className="h-screen overflow-y-scroll sm:w-3/12">
+      <ul className="relative">
+      <li className="cursor-pointer pl-8 pr-6 py-2 border-b-2 flex">
+      <span className="flex hover:translate-x-2">
+        <IoChatbubbleEllipsesSharp className="mt-1 mr-1" />
         <span>Chats</span>
+        </span>
         </li>
-      <li className="mb-4 flex">
-        <MdOndemandVideo/>
-        <span>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+        <span className="flex hover:translate-x-2">
+        <MdOndemandVideo className="mt-1 mr-1 "/>
         Videos
         </span>
         </li>
-      <li className="mb-4 flex">
-        <MdGroups/>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+      <span className="flex hover:translate-x-2">
+        <MdGroups className="mt-1 mr-1"/>
         <span>
         Groups
         </span>
+      </span>
         </li>
-      <li className="mb-4 flex">
-        <FaBookmark/>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+      <span className="flex hover:translate-x-2">
+        <FaBookmark className="mt-1 mr-1"/>
         <span>
         Bookmarks
         </span>
+      </span>
         </li>
-      <li className="mb-4 flex">
-        <BsFillQuestionCircleFill/>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+      <span className="flex hover:translate-x-2">
+        <BsFillQuestionCircleFill className="mt-1 mr-1"/>
         <span>
         Questions
         </span>
+      </span>
         </li>
-      <li className="mb-4 flex">
-        <FaBriefcase/>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+      <span className="flex hover:translate-x-2">
+        <FaBriefcase className="mt-1 mr-1"/>
         <span>
         Jobs
         </span>
+      </span>
         </li>
-      <li className="mb-4 flex">
-        <MdEvent/>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+      <span className="flex hover:translate-x-2">
+        <MdEvent className="mt-1 mr-1"/>
         <span>
         Events
         </span>
+      </span>
         </li>
-      <li className="mb-4 flex">
-        <RiGraduationCapFill/>
+      <li className="cursor-pointer flex pl-8 pr-6 py-2 border-b-2">
+      <span className="flex hover:translate-x-2">
+        <RiGraduationCapFill className="mt-1 mr-1"/>
         <span>
         Courses
         </span>
+      </span>
         </li>
       </ul>
     </div>
