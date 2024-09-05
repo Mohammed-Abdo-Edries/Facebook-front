@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.post {
+.post{
+    box-shadow: 10px 25px 70px rgba(92, 99, 105, 0.2);
+    border: 1px solid #dadce0;
+}
+.firstpost {
     box-shadow: 10px 25px 70px rgba(92, 99, 105, 0.2);
     border: 1px solid #dadce0;
 }

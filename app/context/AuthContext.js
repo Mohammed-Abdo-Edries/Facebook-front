@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useReducer, useEffect, useContext } from 'react'
+import { createContext, useReducer, useEffect } from 'react'
 export const AuthContext =  createContext();
 
 export const authReducer = (state, action) => {

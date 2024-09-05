@@ -1,16 +1,12 @@
 "use client";
 import Link from "next/link";
 import {FaSearch} from "react-icons/fa"
-// import {IoChatbubbleEllipsesSharp} from "react-icons/io5"
 import {IoMdNotifications} from "react-icons/io"
 import {FaUser} from "react-icons/fa"
-// import { useContext } from "react";
-// import { useDarkmodeContext } from "../context/darkModeContext";
-// import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Navbar () {
-  // const { toggle, darkMode } = useDarkmodeContext();
-  // const { user } = useAuthContext();
+  const { user } = useAuthContext();
 
   return (
     <div className="navbar z-10 justify-between flex rounded-b-md h-12 w-full bg-blue-500 sticky top-0 max-w-full px-2 py-2 sm:px-12 text-lg">
@@ -30,25 +26,21 @@ export default function Navbar () {
           <FaSearch className="absolute top-2 left-2"/>
           <input className="rounded sm:w-96 px-8" type="text" placeholder="Search..." />
         </div>
-      <div className="right flex relative">
-        {/* <Link href="/">Homepage</Link> */}
-        {/* <IoChatbubbleEllipsesSharp className="absolute top-2 right-8"/> */}
+      <div className="flex justify-between relative">
+        {user ?
+        <div className="mr-8">{user.firstname + " " + user.lastname}</div>
+        : null
+      }
+        <div className="">
         <IoMdNotifications className="absolute top-2 right-2"/>
-        <FaUser className="absolute top-2"/>
-        {/* <PersonOutlinedIcon /> */}
-        {/* <EmailOutlinedIcon /> */}
-        {/* <NotificationsOutlinedIcon /> */}
-        <div className="user">
-          
-          <img
-            // src={user.profilePic}
-            alt=""
-          />
-          {/* <span>{user.name}</span> */}
+        <FaUser className="absolute top-2"/>      
         </div>
+          {/* <img
+            src={user.profilePic || null} 
+            alt=""
+          /> */}
       </div>
     </div>
   );
 };
 
-// export default Navbar;

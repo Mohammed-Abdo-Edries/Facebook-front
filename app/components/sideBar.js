@@ -10,7 +10,7 @@ import {RiGraduationCapFill} from "react-icons/ri"
 
 export default function sideBar() {
   return (
-    <div className="h-screen overflow-y-scroll sm:w-3/12">
+    <div className="h-screen z-8 overflow-y-scroll sm:w-3/12">
       <ul className="relative">
       <li className="cursor-pointer pl-8 pr-6 py-2 border-b-2 flex">
       <span className="flex hover:translate-x-2">

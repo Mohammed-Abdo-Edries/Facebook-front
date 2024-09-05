@@ -1,6 +1,7 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from './Context/AuthContext'
+import { ActiveTabContextProvider } from './Context/ActiveTabContext'
 import Navbar from "./components/navbar";
 
 const rubik = Rubik({ subsets: ["latin"] });
@@ -14,11 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={rubik.className}>
+        <ActiveTabContextProvider>
         <AuthContextProvider>
         <Navbar />
-
         {children}
         </AuthContextProvider>
+        </ActiveTabContextProvider>
         </body>
     </html>
   );
