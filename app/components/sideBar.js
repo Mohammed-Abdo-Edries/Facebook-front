@@ -1,5 +1,4 @@
 "use client"
-import {IoChatbubbleEllipsesSharp} from "react-icons/io5"
 import {MdOndemandVideo} from "react-icons/md"
 import {MdGroups} from "react-icons/md"
 import {FaBookmark} from "react-icons/fa"
@@ -14,7 +13,6 @@ export default function sideBar() {
       <ul className="relative">
       <li className="cursor-pointer pl-8 pr-6 py-2 border-b-2 flex">
       <span className="flex hover:translate-x-2">
-        <IoChatbubbleEllipsesSharp className="mt-1 mr-1" />
         <span>Chats</span>
         </span>
         </li>

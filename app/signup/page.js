@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
 import { motion } from "framer-motion"
-
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
 const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -13,6 +14,12 @@ const Signup = () => {
     e.preventDefault();
     await signup(firstname, lastname, email, password)
   }
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (user) {
+  redirect("/home")
+    }
+}, [])
   return (
     <motion.div className=" myform h-[calc(100vh-120px)] flex justify-center items-center"
       initial={{ y: 10, opacity: 0 }}
