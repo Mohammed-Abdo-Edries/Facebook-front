@@ -2,11 +2,16 @@
 import SideBar from "../components/sideBar";
 import Feed from "../components/feed";
 import Rightbar from "../components/rightBar";
-// import { useAuthContext } from "./hooks/useAuthContext";
+import { useEffect } from "react";
 import Navbar from "../components/navbar";
-
+import { redirect } from "next/navigation";
 export default function Home() {
-
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (!user) {
+  redirect("/")
+    }
+}, [])
   return (
     <div>
     <Navbar />

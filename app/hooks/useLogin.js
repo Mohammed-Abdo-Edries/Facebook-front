@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useAuthContext } from './useAuthContext'
 import { url } from "../http-common"
+import { redirect } from 'next/navigation'
 
 export const useLogin = () => {
     const [error, setError] = useState(null)
@@ -28,6 +29,7 @@ export const useLogin = () => {
             localStorage.setItem('user', JSON.stringify(json))
             dispatch({ type: 'LOGIN', payload: json })
             setIsLoading(false)
+            redirect("/home")
         }
     }
     return { login, isLoading, error }

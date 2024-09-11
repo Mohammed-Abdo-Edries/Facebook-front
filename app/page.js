@@ -17,22 +17,27 @@ export default function loginForm () {
     }
 }, [])
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    await login(email, password)
+      e.preventDefault()
+      await login(email, password)
+        redirect("/home")
+    
   }
   return (
-    <div className='flex justify-between px-4 bg-orange-200 h-screen'>
+    <div className='flex justify-between px-4 h-screen'>
       <div className='mt-60 ml-32 w-2/5'>
       <div className='mb-4 text-4xl text-blue-500'>Welcome to facebook</div>
       <div className='text-3xl'>Connect with friends and the world around you on Facebook.</div>
       </div>
-    <motion.div className="myform rounded-lg mr-48 flex items-center"
+    <motion.div className="login rounded-lg mr-48 flex items-center"
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0 }} exit={{ opacity: 0, y: 20 }}>
       <form className='login bg-white rounded-md h-60 w-96 py-3 px-6' 
-      onSubmit={handleSubmit}
-      > 
+      onSubmit={
+        handleSubmit
+        // redirect("/home");
+      }
+      >
         {/* <h3 className="pb-5 text-4xl">Log in</h3> */}
         <div className="formdiv pt-2 h-12 mb-4 relative">
           <input type="email" placeholder=' ' className="forminput w-full h-full text-lg absolute p-4 bg-none rounded-lg border-2 border-gray-800 outline-none focus:border-blue-500 transition duration-200" 

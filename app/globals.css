@@ -11,12 +11,11 @@
     border: 1px solid #dadce0;
 }
 .signup {
-    box-shadow: 10px 25px 70px rgba(92, 99, 105, 0.2);
+    box-shadow: 80px 50px 100px rgba(92, 99, 105, 0.2);
 }
 .login {
-    box-shadow: 10px 25px 70px rgba(92, 99, 105, 0.2);
+    box-shadow: 50px 50px 70px rgba(92, 99, 105, 0.2);
 }
-
 .forminput {
     border: 1px solid #dadce0;
 }
