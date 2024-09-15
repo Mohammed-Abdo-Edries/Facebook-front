@@ -7,7 +7,7 @@ import {FaUser} from "react-icons/fa"
 import { useAuthContext } from "../hooks/useAuthContext";
 import Popup from "reactjs-popup";
 import { useLogout } from "../hooks/useLogout";
-import Conversation from "./Conversation";
+// import Conversation from "./Conversation";
 import { useGetConversations } from "../hooks/useGetConversations"
 import { redirect } from "next/navigation";
 

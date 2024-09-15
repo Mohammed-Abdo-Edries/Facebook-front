@@ -18,6 +18,7 @@ export const useGetConversations = () => {
 				method: 'GET',
 				headers: { 'Content-Type': 'application/json' },
 			})
+			console.log(response.json())
 			const json = await response.json()
 			if (!response.ok) {
 				setLoading(false)
