@@ -14,12 +14,12 @@ export default function Home() {
     }
   }, [navigate]);
   return (
-    <div className="min-h-screen min-w-full flex">
+    <div className="w-screen">
       <Navbar />
-      <div className=" justify-between mt-16">
-        <SideBar className="w-1/4 p-4" />
-        <Feed className="w-1/2 p-4" />
-        <Rightbar className="w-1/4 p-4" />
+      <div className="flex justify-between">
+        <SideBar className="p-4" />
+        <Feed className="p-4" />
+        <Rightbar className="p-4" />
       </div>
     </div>
   );

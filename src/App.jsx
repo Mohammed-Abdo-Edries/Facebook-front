@@ -6,7 +6,6 @@ import Login from './pages/login'
 import { useAuthContext } from './hooks/useAuthContext'
 import './index.css'
 import ProtectedRoute from './components/ProtectedRoute';
-// import './app.css'
 function App() {
   const { user } = useAuthContext()
   // const Navigate = useNavigate()

@@ -18,8 +18,6 @@ export const useLogin = () => {
     });
 
     const json = await response.json();
-    console.log("Login response:", response.status, json);
-
     if (!response.ok) {
       setIsLoading(false);
       setError(json.error || "Login failed");
