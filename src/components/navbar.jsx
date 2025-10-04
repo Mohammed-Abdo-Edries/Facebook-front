@@ -1,22 +1,19 @@
-import {FaSearch} from "react-icons/fa"
+import {FaSearch, FaUserCircle} from "react-icons/fa"
 import {IoMdNotifications} from "react-icons/io"
-import {IoChatbubbleEllipsesSharp} from "react-icons/io5"
-import {FaUser} from "react-icons/fa"
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useState, useEffect } from 'react'
 import {BsSunFill, BsFillMoonStarsFill} from "react-icons/bs"
 import Popup from "reactjs-popup";
 import { useLogout } from "../hooks/useLogout";
 import { AnimatePresence,motion } from 'framer-motion'
-import { useGetConversations } from "../hooks/useGetConversations"
 import { useNavigate } from "react-router-dom";
-
+import Chats from "../popups/Chats";
 export default function Navbar () {
   const { user } = useAuthContext()
   const [theme, setTheme] = useState("light")
-  const { loading, conversations, error } = useGetConversations();
   const { logout } = useLogout()
   const navigate = useNavigate()
+  // console.log("conversations in navbar:", conversations)
   const variants = {
     hidden: { y: -20, opacity: 0 },
     enter: { y: 0, opacity: 1 },
@@ -53,22 +50,6 @@ const handelClick = async () => {
           <input className="rounded sm:w-96 px-8" type="text" placeholder="Search..." />
         </div>
       <div className="flex justify-end">
-          {/* <Popup trigger={<button><IoChatbubbleEllipsesSharp className="absolute top-2 right-8" /></button>} position={"bottom right"} closeOnDocumentClick>
-          <div className='bg-white w-60 h-60 py-2 px-4 rounded'>
-          <div className='py-2 flex flex-col overflow-auto'>
-          {conversations.map((conversation, idx) => (
-          <Conversation
-					key={conversation._id}
-					conversation={conversation}
-					lastIdx={idx === conversations.length - 1}
-            />
-          ))}
-
-          {loading ? <span className='loading loading-spinner mx-auto'></span> : null}
-          {error ? <span className=' mx-auto'>{error}</span> : null}
-          </div>
-          </div>
-          </Popup> */}
           {theme === 'dark' ?
             <AnimatePresence mode='wait' >
               {theme === "dark" && (
@@ -99,11 +80,11 @@ const handelClick = async () => {
                 </motion.button>
               )}
             </AnimatePresence> }
+          <Chats />
           <Popup trigger={<button><IoMdNotifications className="ml-2"/></button>} position="bottom right" closeOnDocumentClick>
           Notifications list
           </Popup>
-          {/* <button><IoMdNotifications className="absolute top-2 right-2"/></button> */}
-          <Popup trigger={<button className="ml-2"><FaUser /></button>} position="bottom right" closeOnDocumentClick>
+          <Popup trigger={<button className="ml-2"><FaUserCircle /></button>} position="bottom right" closeOnDocumentClick>
             <div className='bg-white w-60 h-60 py-2 px-4 rounded'>
                 <div className='text-lg '>
                   {user ?

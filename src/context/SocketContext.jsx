@@ -1,4 +1,3 @@
-"use client"
 import { createContext, useState, useEffect, useContext } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import io from "socket.io-client";
@@ -12,11 +11,11 @@ export const useSocketContext = () => {
 export const SocketContextProvider = ({ children }) => {
 	const [socket, setSocket] = useState(null);
 	const [onlineUsers, setOnlineUsers] = useState([]);
-	const { user } = useAuthContext();
+	const { authUser } = useAuthContext();
 
 	useEffect(() => {
-		if (user) {
-			const socket = io("https://chat-app-yt.onrender.com", {
+		if (authUser) {
+			const socket = io("http://localhoast:8800", {
 				query: {
 					userId: user._id,
 				},
@@ -36,7 +35,7 @@ export const SocketContextProvider = ({ children }) => {
 				setSocket(null);
 			}
 		}
-	}, [user]);
+	}, [authUser]);
 
 	return <SocketContext.Provider value={{ socket, onlineUsers }}>{children}</SocketContext.Provider>;
 };

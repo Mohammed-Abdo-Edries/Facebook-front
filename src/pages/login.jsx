@@ -79,13 +79,13 @@ export default function LoginForm () {
   <input
     type="password"
     id="password"
-    value={email}
+    value={password}
     onChange={(e) => setPassword(e.target.value)}
     placeholder=" "
     className="peer block w-full rounded-md border-2 border-gray-300 bg-transparent px-3 pt-5 pb-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-0 focus:outline-none"
   />
   <label
-    htmlFor="email"
+    htmlFor="password"
     className="absolute left-3 -top-2.5 bg-white px-1 text-sm text-gray-500 transition-all
       peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent
       peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-500 peer-focus:bg-white"
