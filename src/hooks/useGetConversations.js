@@ -9,30 +9,31 @@ export const useGetConversations = () => {
 	// const {user} = useAuthContext()
 
 	useEffect(() => {
-		const getConversations = async () => {
-			const user = JSON.parse(localStorage.getItem('user')) || null;
-			if (!user) return;
-			// console.log(user.userId)
-			console.log(user.friends)
-			setLoading(true);
-			setError(null)
-			// const response = await fetch(`${url}/api/${user.userId}/friends`, {
-			// 	method: 'GET',
-			// 	headers: { 'Content-Type': 'application/json' },
-			// })
-			// console.log(response.json())
-			// const json = await response.json()
-			// if (!response.ok) {
-			// 	setLoading(false)
-			// 	setError(json.error)
-			// }
-			// if (response.ok) {
-			// 	console.log(`Conversations ${json}`)
-			// 	setLoading(false)
-			// 	setConversations(json);
-			// }
-		};
+		 const getConversations = async () => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) return;
 
+      setLoading(true);
+      try {
+        const res = await fetch(`${url}/users/${user.userId}/friends`,
+           {
+             headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${user.token}`,
+				}
+      });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Failed to fetch friends");
+
+        setConversations(data); 
+		// console.log("conversations",data)
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 		getConversations();
 	}, []);
 

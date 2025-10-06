@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  overflow-y: scroll;
+  overflow-x: hidden; 
+}
+html {
+  overflow: scroll;
+}

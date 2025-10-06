@@ -6,8 +6,8 @@ import {MdEmojiEmotions} from "react-icons/md"
 import Post from "./post"
 export default function feed() {
   return (
-    <div className="feed h-screen overflow-scroll p-2 sm:w-6/12">
-      <div className="firstpost flex flex-col w-full h-24 rounded-md mb-4">
+    <div className="mt-12 h-screen overflow-scroll p-2 sm:w-6/12">
+      <div className="firstpost flex flex-col w-full h-24 rounded-md border-black border-2">
         {/* <Image/> */}
         <input className="h-fit w-full my-2 pl-2 focus:outline-none" placeholder="Whats's in your mind?"/>
         <hr className="bg-black h-1 mx-1 w-[calc(100%-8px)]"/>
@@ -34,6 +34,14 @@ export default function feed() {
           </div>
         </div>
       </div>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
       <Post />
       <Post />
       <Post />

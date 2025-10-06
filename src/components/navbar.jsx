@@ -1,5 +1,6 @@
-import {FaSearch, FaUserCircle} from "react-icons/fa"
-import {IoMdNotifications} from "react-icons/io"
+import {FaSearch, FaUserCircle, FaFacebook} from "react-icons/fa"
+import {IoMdHome, IoMdNotifications} from "react-icons/io"
+import {IoFlagOutline} from "react-icons/io5"
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useState, useEffect } from 'react'
 import {BsSunFill, BsFillMoonStarsFill} from "react-icons/bs"
@@ -8,6 +9,7 @@ import { useLogout } from "../hooks/useLogout";
 import { AnimatePresence,motion } from 'framer-motion'
 import { useNavigate } from "react-router-dom";
 import Chats from "../popups/Chats";
+import { MdGroups, MdOndemandVideo } from "react-icons/md";
 export default function Navbar () {
   const { user } = useAuthContext()
   const [theme, setTheme] = useState("light")
@@ -39,16 +41,34 @@ const handelClick = async () => {
 
   
   return (
-    <div className="z-10 flex justify-between rounded-b-md h-12 w-full  sticky top-0 px-2 py-2 sm:px-12 text-lg">
-        <div className="pr-2">
-        <a className="pr-2 cursor-pointer" href="/">
-          <span>Facebook</span>
+    <div className="fixed top-0 z-50 flex justify-between items-center rounded-b-md h-12 w-full bg-white px-2 py-2 sm:px-4 text-lg">
+        <div className="pr-2 flex">
+        <a className="mr-4 cursor-pointer" href="/">
+          <div>
+            <FaFacebook className="text-blue-800 text-3xl" />
+          </div>
         </a>
-        </div>
         <div className="search flex relative bg-white rounded-md">
           <FaSearch className="absolute top-2 left-2"/>
-          <input className="rounded sm:w-96 px-8" type="text" placeholder="Search..." />
+          <input className="rounded sm:w-64 px-8" type="text" placeholder="Search on facebook" />
         </div>
+        </div>
+        <div className="hidden sm:flex flex-1 justify-between max-w-xl mx-auto h-full">
+  <div className="flex items-center justify-start flex-start h-full px-12 cursor-pointer 
+                border-b-4 border-blue-600">
+    <IoMdHome className="text-2xl text-blue-800" />
+  </div>
+  <div className="flex items-center justify-center flex-1 h-full px-12 cursor-pointer 
+                hover:bg-gray-100 rounded-lg">
+    <IoFlagOutline className="text-2xl text-gray-600" />
+  </div>
+  <div className=" items-center justify-center flex-1 h-full px-12 cursor-pointer rounded-lg">
+    <MdOndemandVideo className="text-2xl text-gray-600" />
+  </div>
+  <div className="items-center justify-center flex-1 h-full px-12 cursor-pointer rounded-lg">
+    <MdGroups className="text-2xl text-gray-600" />
+  </div>
+</div>
       <div className="flex justify-end">
           {theme === 'dark' ?
             <AnimatePresence mode='wait' >

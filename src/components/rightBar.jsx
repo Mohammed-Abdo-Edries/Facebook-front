@@ -3,7 +3,7 @@ import {FaGift} from "react-icons/fa"
 
 export default function rightBar() {
   return (
-    <div className="h-screen z-9 p-4 sm:w-3/12 overflow-y-scroll">
+    <div className="hidden sm:block h-screen z-9 p-4 mt-12 sm:w-3/12 overflow-y-hidden">
       <div className="mb-4 flex">
         <FaGift className="w-10 h-10 mr-2"/>
         <span className="cursor-pointer">
