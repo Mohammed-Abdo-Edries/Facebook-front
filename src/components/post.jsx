@@ -18,7 +18,7 @@ export default function post() {
           <RxCross2 className="text-2xl font-bold" />
         </div>
       </div>
-        <div className="px-4 mb-4 border-b-2 border-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam pariatur 
+        <div className="px-4 mb-4 pb-4 border-b-2 border-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam pariatur 
           minus consectetur! Fugiat libero aperiam ducimus delectus facere eligendi id aspernatur quisquam
            repudiandae minima? Fugit provident doloremque porro maiores et.</div>
         <div className="flex justify-between">

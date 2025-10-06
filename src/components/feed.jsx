@@ -26,7 +26,7 @@ export default function feed() {
             </span>
             <span>Location</span>
           </div>
-          <div className="flex cursor-pointer">
+          <div className="hidden sm:flex cursor-pointer">
             <span  className="mt-1 pr-1">
             <MdEmojiEmotions/>
             </span>

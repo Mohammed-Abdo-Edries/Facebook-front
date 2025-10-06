@@ -48,27 +48,27 @@ const handelClick = async () => {
             <FaFacebook className="text-blue-800 text-3xl" />
           </div>
         </a>
-        <div className="search flex relative bg-white rounded-md">
+        <div className="hidden sm:flex relative bg-white rounded-md">
           <FaSearch className="absolute top-2 left-2"/>
           <input className="rounded sm:w-64 px-8" type="text" placeholder="Search on facebook" />
         </div>
         </div>
         <div className="hidden sm:flex flex-1 justify-between max-w-xl mx-auto h-full">
-  <div className="flex items-center justify-start flex-start h-full px-12 cursor-pointer 
+    <div className="flex items-center justify-start flex-start h-full px-12 cursor-pointer 
                 border-b-4 border-blue-600">
     <IoMdHome className="text-2xl text-blue-800" />
-  </div>
-  <div className="flex items-center justify-center flex-1 h-full px-12 cursor-pointer 
+    </div>
+    <div className="flex items-center justify-center flex-1 h-full px-12 cursor-pointer 
                 hover:bg-gray-100 rounded-lg">
     <IoFlagOutline className="text-2xl text-gray-600" />
-  </div>
-  <div className=" items-center justify-center flex-1 h-full px-12 cursor-pointer rounded-lg">
+    </div>
+    <div className=" items-center justify-center flex-1 h-full px-12 cursor-pointer rounded-lg">
     <MdOndemandVideo className="text-2xl text-gray-600" />
-  </div>
-  <div className="items-center justify-center flex-1 h-full px-12 cursor-pointer rounded-lg">
+    </div>
+    <div className="items-center justify-center flex-1 h-full px-12 cursor-pointer rounded-lg">
     <MdGroups className="text-2xl text-gray-600" />
-  </div>
-</div>
+    </div>
+    </div>
       <div className="flex justify-end">
           {theme === 'dark' ?
             <AnimatePresence mode='wait' >
@@ -120,6 +120,20 @@ const handelClick = async () => {
             </div>
             </Popup>   
       </div>
+      <div className="fixed top-12 z-40 w-full bg-white flex items-center h-11 border-b border-gray-200 sm:hidden dark:bg-gray-800">
+    <div className="flex flex-1 items-center justify-center h-full text-blue-600 border-b-4 border-blue-600 text-2xl">
+    <IoMdHome className="" />
+    </div>
+    <div className="flex flex-1 items-center justify-center h-full text-gray-500 dark:hover:bg-gray-700 text-2xl">
+    <IoFlagOutline className="text-2xl text-gray-600" />
+    </div>
+    <div className="flex flex-1 items-center justify-center h-full text-gray-500 dark:hover:bg-gray-700 text-2xl">
+    <MdOndemandVideo className="" />
+    </div>
+    <div className="flex flex-1 items-center justify-center h-full text-gray-500 dark:hover:bg-gray-700 text-2xl">
+    <MdGroups className="" />
+    </div>
+    </div>
     </div>
   );
 };

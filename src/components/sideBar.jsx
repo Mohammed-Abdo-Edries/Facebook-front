@@ -1,5 +1,6 @@
 import {MdOndemandVideo} from "react-icons/md"
 import {MdGroups} from "react-icons/md"
+import {IoIosArrowDown} from "react-icons/io"
 import {FaBookmark, FaRegCircle, FaUserCircle, FaUserFriends} from "react-icons/fa"
 import {MdEvent} from "react-icons/md"
 import {RiMemoriesFill} from "react-icons/ri"
@@ -9,8 +10,8 @@ import useAuthContext from "../hooks/useAuthContext"
 export default function sideBar() {
     const { user } = useAuthContext()
   return (
-    <div className="h-screen z-8 overflow-y-hidden sm:w-3/12">
-      <ul className="relative">
+    <div className="h-screen hidden sm:block z-8 overflow-y-hidden sm:w-3/12">
+      <ul className="relative pt-12">
       <li className="cursor-pointer flex pl-4 pr-6 py-4">
         <span className="flex hover:translate-x-2">
         <FaUserCircle className="mt-1 mr-2 text-2xl"/>
@@ -73,7 +74,7 @@ export default function sideBar() {
         </li>
       <li className="cursor-pointer flex pl-4 pr-6 py-4">
       <span className="flex hover:translate-x-2">
-        &#8964;
+        <IoIosArrowDown className="pt-1 mr-1 text-2xl font-bold" />
         <span className="pl-2">
         See More
         </span>
