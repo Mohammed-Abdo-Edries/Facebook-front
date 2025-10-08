@@ -25,7 +25,7 @@ export default function post() {
           <div className="flex mx-2">
           <IoMdThumbsUp className="text-2xl text-blue-800 mr-2" />
           <FaHeart className="text-2xl text-red-800 mr-2"/>
-          <span>30 people liked it</span>
+          <span>30 likes</span>
           </div>
           <div>
             <div className="flex">

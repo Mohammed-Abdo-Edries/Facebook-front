@@ -31,7 +31,6 @@ const Chats = () => {
                 maxHeight: 'calc(100vh - 32px)', 
                 height: showMessageView ? 'calc(100vh - 80px)' : '240px',                
                  width: showMessageView ? '450px' : '240px',
-                padding: '0', 
                 border: 'black 2px solid', 
                 overflow: 'hidden',
                 borderRadius: '8px' 
@@ -39,9 +38,7 @@ const Chats = () => {
             trigger={<button><FaFacebookMessenger className="ml-2 text-xl" /></button>} 
             position={"bottom right"} 
             closeOnDocumentClick >
-            <div className={`bg-white rounded overflow-hidden shadow-xl h-full w-full
-                    
-                    `} >                
+            <div className={`bg-white rounded overflow-hidden shadow-xl h-full w-full`} >                
                 <div 
                      className='flex transition-transform duration-300 ease-in-out h-full'
                     style={{

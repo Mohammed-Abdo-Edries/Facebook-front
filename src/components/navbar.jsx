@@ -15,7 +15,6 @@ export default function Navbar () {
   const [theme, setTheme] = useState("light")
   const { logout } = useLogout()
   const navigate = useNavigate()
-  // console.log("conversations in navbar:", conversations)
   const variants = {
     hidden: { y: -20, opacity: 0 },
     enter: { y: 0, opacity: 1 },
@@ -41,7 +40,7 @@ const handelClick = async () => {
 
   
   return (
-    <div className="fixed top-0 z-50 flex justify-between items-center rounded-b-md h-12 w-full bg-white px-2 py-2 sm:px-4 text-lg">
+    <div className="fixed top-0 z-50 flex justify-between items-center rounded-b-md h-12 w-full bg-white dark:bg-gray-900 px-2 py-2 sm:px-4 text-lg">
         <div className="pr-2 flex">
         <a className="mr-4 cursor-pointer" href="/">
           <div>
@@ -50,7 +49,7 @@ const handelClick = async () => {
         </a>
         <div className="hidden sm:flex relative bg-white rounded-md">
           <FaSearch className="absolute top-2 left-2"/>
-          <input className="rounded sm:w-64 px-8" type="text" placeholder="Search on facebook" />
+          <input className="rounded sm:w-64 px-8 dark:text-black" type="text" placeholder="Search on facebook" />
         </div>
         </div>
         <div className="hidden sm:flex flex-1 justify-between max-w-xl mx-auto h-full">
@@ -102,21 +101,27 @@ const handelClick = async () => {
             </AnimatePresence> }
           <Chats />
           <Popup trigger={<button><IoMdNotifications className="ml-2"/></button>} position="bottom right" closeOnDocumentClick>
-          Notifications list
+          <div className="bg-white rounded h-60 w-64 px-4 py-4">
+         You have no new Notifications
+          </div>
           </Popup>
           <Popup trigger={<button className="ml-2"><FaUserCircle /></button>} position="bottom right" closeOnDocumentClick>
-            <div className='bg-white w-60 h-60 py-2 px-4 rounded'>
-                <div className='text-lg '>
+            <div className='text-lg items-center border-2 border-black bg-white w-60 h-60 py-2 px-4 rounded'>
                   {user ?
-                <>
-                  <div>{user.firstname + " " + user.lastname}</div>
-                  <div>{user.email}</div>
-                </>  
-                  : null
-                }
-                  <div><button className='pr-4 pl-4 pb-1' onClick={handelClick}>
+                  <div className="">
+                  <div>
+                    <FaUserCircle className="text-9xl" />
+                  </div>
+                    <div>{user.firstname + " " + user.lastname}</div>
+                    <div>{user.email}</div>
+                    <div><button className='text-blue-800' onClick={handelClick}>
                     Log Out</button></div>
-                </div>
+                  </div>  
+                    : 
+                    <div>
+                      You must login
+                    </div>
+                  }
             </div>
             </Popup>   
       </div>

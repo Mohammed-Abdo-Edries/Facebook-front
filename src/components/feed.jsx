@@ -2,14 +2,12 @@ import {FaImage} from "react-icons/fa"
 import {FaTag} from "react-icons/fa"
 import {MdLocationPin} from "react-icons/md"
 import {MdEmojiEmotions} from "react-icons/md"
-// import Image from "next/image"
 import Post from "./post"
 export default function feed() {
   return (
-    <div className="mt-12 h-screen overflow-scroll p-2 sm:w-6/12">
+    <div className="mt-24 sm:mt-12 h-screen overflow-scroll p-2 sm:w-6/12">
       <div className="firstpost flex flex-col w-full h-24 rounded-md border-black border-2">
-        {/* <Image/> */}
-        <input className="h-fit w-full my-2 pl-2 focus:outline-none" placeholder="Whats's in your mind?"/>
+        <input className="h-fit w-full my-2 pl-2 dark:text-black focus:outline-none" placeholder="Whats's in your mind?"/>
         <hr className="bg-black h-1 mx-1 w-[calc(100%-8px)]"/>
         <div className="px-4 py-4 flex justify-between">
           <div className="flex cursor-pointer">
